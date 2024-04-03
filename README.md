@@ -20,7 +20,7 @@ On Windows, you can run the following commands:
 Keep your content images and style images in their respective directories. ** I know this is a very bad way of doing things. Once we decide on what data to commonly use for all stages we can have the data directory outside**
 
 ### Running stage 
-To get started, got to ``nst.py`` and change the ``content`` and ``style`` arguments based on the images you want to use. 
+To get started, got to ``nst.py`` and change the ``--content`` and ``--style`` arguments based on the images you want to use. 
 
     python nst.py
 
