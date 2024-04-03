@@ -1,0 +1,11 @@
+stage1/loss/__pycache__
+stage1/optimizer/__pycache__
+venv
+stage1/video.py
+stage1/visualize.py
+stage1/data
+stage1/models/__pycache__
+stage1/utils/__pycache__
+stage1/ffmpeg.exe
+stage2
+stage2a
