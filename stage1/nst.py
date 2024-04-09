@@ -13,7 +13,9 @@ def neural_style_transfer(config):
     # handle nst output storage
     content_img_path = os.path.join(config['content_images_dir'], config['content'])
     style_img_path = os.path.join(config['style_images_dir'], config['style'])
-    out_dir_name = 'combined_' + os.path.split(content_img_path)[1].split('.')[0] + '_' + os.path.split(style_img_path)[1].split('.')[0]
+    content_image_name = os.path.split(content_img_path)[1].split('.')[0]
+    style_image_name = os.path.split(style_img_path)[1].split('.')[0]
+    out_dir_name = 'combined_' + content_image_name + '_' + style_image_name
     result_path = os.path.join(config['output_img_dir'], out_dir_name)
     os.makedirs(result_path, exist_ok=True)
 
@@ -50,11 +52,13 @@ def neural_style_transfer(config):
 
 if __name__ == "__main__":
     # default args
-    default_resource_dir = os.path.join(os.path.dirname(__file__), 'data')
-    content_images_dir = os.path.join(default_resource_dir, 'content-images')
-    style_images_dir = os.path.join(default_resource_dir, 'style-images')
-    output_img_dir = os.path.join(default_resource_dir, 'output-images')
     img_format = (4, '.jpg')  # saves images in the format: %04d.jpg
+
+    current_dir = os.path.dirname(__file__)
+    parent_dir = os.path.abspath(os.path.join(current_dir, os.pardir))
+    content_images_dir = os.path.join(parent_dir, 'data', 'content-images')
+    style_images_dir = os.path.join(parent_dir, 'data', 'style-images')
+    output_img_dir = os.path.join(parent_dir, 'data', 'output-images', 'stage1')
 
 
     parser = argparse.ArgumentParser()
