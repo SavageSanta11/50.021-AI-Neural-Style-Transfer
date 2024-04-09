@@ -7,5 +7,11 @@ stage1/data
 stage1/models/__pycache__
 stage1/utils/__pycache__
 stage1/ffmpeg.exe
-stage2
+stage2/models/__pycache__
+stage2/models/binaries
+stage2/modesl/checkpoints
+stage2/checkpoints
+stage2/data
+stage2/runs
+stage2/utils/__pycache__
 stage2a
