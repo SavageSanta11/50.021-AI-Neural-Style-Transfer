@@ -8,8 +8,7 @@ from models.transformer_net import ImageTransfomer
 def stylize_static_image(inference_config):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-    # load trained model
-    nst_model = ImageTransfomer().to(device)
+    nst_model = ImageTransfomer.from_pretrained("SavageSanta25/johnson-mosaic").to(device)
     print(os.path.join(inference_config["model_binaries_path"], inference_config["checkpoint_name"]))
     training_state = torch.load(os.path.join(inference_config["model_binaries_path"], inference_config["checkpoint_name"]))
     print(training_state.keys())
@@ -38,7 +37,7 @@ if __name__ == "__main__":
     # Put image name or directory containing images (if you'd like to do a batch stylization on all those images)
     parser.add_argument("--content", type=str, help="Content image(s) to stylize", default='taj_mahal.jpg')
     parser.add_argument("--img_width", type=int, help="Resize content image to this width", default=500)
-    parser.add_argument("--checkpoint_name", type=str, help="Model binary to use for stylization", default='giger_crop.pth')
+    parser.add_argument("--checkpoint_name", type=str, help="Model binary to use for stylization", default='mosaic.pth')
 
     parser.add_argument("--should_not_display", action='store_false', help="Should display the stylized result")
     parser.add_argument("--redirected_output", type=str, help="Overwrite default output dir. Useful when this project is used as a submodule", default=None)

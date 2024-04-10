@@ -1,8 +1,9 @@
 
 import torch
 from models.wrappers import ResidualWrapper, UpsampleConvWrapper
+from huggingface_hub import PyTorchModelHubMixin
 
-class ImageTransfomer(torch.nn.Module):
+class ImageTransfomer(torch.nn.Module, PyTorchModelHubMixin):
     def __init__(self):
         super().__init__()
     

@@ -94,7 +94,7 @@ def save_and_maybe_display_image(inference_config, dump_img, should_display=Fals
 
     if inference_config['redirected_output'] is None:
         dump_dir = inference_config['output_images_path']
-        dump_img_name = os.path.basename(inference_config['content']).split('.')[0] + '_width_' + str(inference_config['img_width']) + '_model_' + inference_config['model_name'].split('.')[0] + '.jpg'
+        dump_img_name = os.path.basename(inference_config['content']).split('.')[0] + '_width_' + str(inference_config['img_width']) + '_model_' + inference_config['checkpoint_name'].split('.')[0] + '.jpg'
     else:  # useful when this repo is used as a utility submodule in some other repo like pytorch-naive-video-nst
         dump_dir = inference_config['redirected_output']
         os.makedirs(dump_dir, exist_ok=True)
