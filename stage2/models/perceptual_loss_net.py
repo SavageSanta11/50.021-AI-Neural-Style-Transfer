@@ -5,7 +5,7 @@ class Vgg16(torch.nn.Module):
     def __init__(self, requires_grad=False, show_progress=False):
         super().__init__()
         vgg_pretrained = models.vgg16(pretrained=True, progress=show_progress).features
-        self.layer_names = ['relu1_2', 'relu2_2', 'relu3_3', 'relu4_3'] # the paper mentions that these are the layers that work best
+        self.layer_names = ['relu1_2', 'relu2_2', 'relu3_3', 'relu4_3'] 
         
         self.conv1_1 = vgg_pretrained[0]
         self.relu1_1 = vgg_pretrained[1]
@@ -100,10 +100,8 @@ class Vgg16(torch.nn.Module):
         x = self.relu5_3(x)
         relu5_3 = x
         x = self.max_pooling5(x)
-        # expose only the layers that you want to experiment with here
         vgg_outputs = namedtuple("VggOutputs", self.layer_names)
         out = vgg_outputs(relu1_2, relu2_2, relu3_3, relu4_3)
-
         return out
     
 PerceptualLossNet = Vgg16

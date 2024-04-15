@@ -161,8 +161,8 @@ def show_output(input_image_path, model_type, title, caption, output_image_path)
         }
         
         output_image_path = stylize_image(model_type, inference_config)
-        generate_description(output_image_path.name, model_type, title, caption)
-        
+        generate_description(output_image_path, model_type, title, caption)
+        print(output_image_path)
         st.image(output_image_path, caption="Generated Image 🎈", use_column_width=True)
 
 def show_gallery():
