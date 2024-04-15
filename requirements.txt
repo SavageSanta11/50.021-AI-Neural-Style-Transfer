@@ -23,3 +23,5 @@ torchaudio==2.2.1+cu121
 torchvision==0.17.1+cu121
 typing_extensions==4.8.0
 zipp==3.18.1
+streamlit
+streamlit-card

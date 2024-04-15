@@ -15,3 +15,6 @@ stage2/data
 stage2/runs
 stage2/utils/__pycache__
 stage2a
+stage2\johnson-mosaic
+ffmpeg.exe
+temp_workspace
